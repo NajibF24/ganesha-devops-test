@@ -64,8 +64,7 @@ I have provided two methods of deployment to demonstrate versatility.
 1. **Initialize Terraform:**
    ```bash
    terraform init
-```
-```
+
 ## 4. 🔒 Security Considerations
 
 Security was a primary focus in this implementation. The following measures were enforced to ensure a hardened infrastructure:
@@ -81,7 +80,7 @@ Security was a primary focus in this implementation. The following measures were
 ### C. Infrastructure Security (IaC)
 * **IAM Roles:** The Terraform code (`main.tf`) utilizes `aws_iam_role` and `aws_iam_instance_profile`. This eliminates the need to hardcode `AWS_ACCESS_KEY_ID` or secrets inside the EC2 instance, strictly adhering to the **Principle of Least Privilege**.
 ---
-```
+
 ## 5. 💰 Cost Estimation (AWS Free Tier)
 
 This architecture is optimized to fit entirely within the **AWS Free Tier** limits (first 12 months).
@@ -97,7 +96,7 @@ This architecture is optimized to fit entirely within the **AWS Free Tier** limi
 *Note: For the actual deployment on my VPS, the cost is pre-paid, but the design above respects the $0 AWS requirement.*
 
 ---
-```
+
 ## 6. 📜 Script Deployment Logic
 
 The `setup.sh` script serves as the configuration management tool. It performs the following logic:
@@ -108,7 +107,7 @@ The `setup.sh` script serves as the configuration management tool. It performs t
    openssl req -x509 ... -keyout certs/server.key -out certs/server.crt ...
 
 ---
-```
+
 ## 7. 📸 Screenshots
 
 **1. HTTPS Secure Connection (Browser Proof)**
@@ -122,15 +121,16 @@ The `setup.sh` script serves as the configuration management tool. It performs t
 **3. Project Structure & Files (VPS Terminal)**
 ![Project Structure](./screenshots/project-structure.png)
 *Terminal output confirming the presence of all required files (main.tf, docker-compose.yaml, setup.sh) on the deployment server.*
-```
+
+
 ---
-```
+
 ##✅ Bonus Implementation Checklist* [x] **Terraform:** Full AWS Infrastructure defined in `main.tf`.
 * [x] **Docker:** Used `nginx:alpine` for containerization.
 * [x] **Docker Compose:** Implemented for better service orchestration.
 * [x] **HTTPS:** Implemented SSL termination (Port 443) with auto-generated certificates.
 * [x] **Bash Automation:** Zero-touch deployment via `setup.sh`.
-```
+
 ---
 
 **Author:** Muhammad Najib Fauzan
