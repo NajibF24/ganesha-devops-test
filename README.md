@@ -26,15 +26,14 @@ The architecture is designed to be resilient, secure, and cost-effective.
 ### Logical Diagram
 ```mermaid
 graph LR
-    User((User)) -- HTTPS/443 --> Firewall[Security Group / Firewall]
-    Firewall -- Allowed --> DockerHost[EC2 / VPS Host]
+    User((User)) -- HTTPS/443 --> Firewall["Security Group / Firewall"]
+    Firewall -- Allowed --> DockerHost["EC2 / VPS Host"]
     subgraph "Docker Environment"
-        DockerHost --> Nginx[Nginx Container]
-        Nginx -- Volume Mount --> Certs[(SSL Certs)]
-        Nginx -- Volume Mount --> HTML[(Web Content)]
+        DockerHost --> Nginx["Nginx Container"]
+        Nginx -- Volume Mount --> Certs[("SSL Certs")]
+        Nginx -- Volume Mount --> HTML[("Web Content")]
     end
-    Firewall -- Blocked --> SSH[Port 22 (Restricted)]
----
+    Firewall -- Blocked --> SSH["Port 22 (Restricted)"]
 
 ## 2. 📂 Repository Structure
 
