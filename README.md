@@ -35,6 +35,10 @@ graph LR
     end
     Firewall -- Blocked --> SSH["Port 22 (Restricted)"]
 
+
+
+---
+
 ## 2. 📂 Repository Structure
 
 This repository is organized to separate Infrastructure as Code from Application Logic:
